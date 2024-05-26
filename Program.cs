@@ -59,4 +59,15 @@ using espacioEmpleado;
 
 Empleado empleado = new Empleado();
 
-empleado.FechaNac = DateTime ();
+empleado.FechaNac = new DateTime(2009,02,1);
+empleado.FechaIngreso = new DateTime(2009,02,01);
+empleado.SueldoBasico = 650000;
+empleado.EstadoCivil = 'c';
+empleado.Cargo = Cargos.Especialista;
+
+System.Console.WriteLine(empleado.FechaNac.ToString("dd-MM-yyyy"));
+System.Console.WriteLine(empleado.edad());
+System.Console.WriteLine(empleado.antiguedad());
+empleado.jubilacion();
+
+System.Console.WriteLine(empleado.salario());

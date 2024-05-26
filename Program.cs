@@ -55,4 +55,8 @@
 
 /* EJERCICIO EMPLEADO */
 
+using espacioEmpleado;
 
+Empleado empleado = new Empleado();
+
+empleado.FechaNac = DateTime ();

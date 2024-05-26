@@ -42,14 +42,14 @@ class Empleado
         return dias/365;
     }
 
-    public void jubilacion()
+    public int jubilacion()
     {
         if(edad() < 65)
         {
-            System.Console.WriteLine($"Le faltan {65-edad()} anios para jubilarse");
+            return(65-edad());
         }else
         {
-            System.Console.WriteLine($"Ya puede jubilarse");
+           return 0;
         }
     }
 

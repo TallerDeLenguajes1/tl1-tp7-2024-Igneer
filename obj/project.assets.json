@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tato_\\OneDrive\\Documentos\\3erAnio\\TallerL1\\tl1-tp7-2024-Igneer\\tl1-tp7-2024-Igneer.csproj",
+      "projectUniqueName": "C:\\Users\\tato_\\OneDrive\\Documentos\\tl1-tp7-2024-Igneer\\tl1-tp7-2024-Igneer.csproj",
       "projectName": "tl1-tp7-2024-Igneer",
-      "projectPath": "C:\\Users\\tato_\\OneDrive\\Documentos\\3erAnio\\TallerL1\\tl1-tp7-2024-Igneer\\tl1-tp7-2024-Igneer.csproj",
+      "projectPath": "C:\\Users\\tato_\\OneDrive\\Documentos\\tl1-tp7-2024-Igneer\\tl1-tp7-2024-Igneer.csproj",
       "packagesPath": "C:\\Users\\tato_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tato_\\OneDrive\\Documentos\\3erAnio\\TallerL1\\tl1-tp7-2024-Igneer\\obj\\",
+      "outputPath": "C:\\Users\\tato_\\OneDrive\\Documentos\\tl1-tp7-2024-Igneer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tato_\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

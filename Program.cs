@@ -55,19 +55,60 @@
 
 /* EJERCICIO EMPLEADO */
 
+using System.Security.Cryptography;
 using espacioEmpleado;
 
-Empleado empleado = new Empleado();
+Empleado[] empleado = new Empleado[3];
 
-empleado.FechaNac = new DateTime(2009,02,1);
-empleado.FechaIngreso = new DateTime(2009,02,01);
-empleado.SueldoBasico = 650000;
-empleado.EstadoCivil = 'c';
-empleado.Cargo = Cargos.Especialista;
+Random aleatorio = new Random();
 
-System.Console.WriteLine(empleado.FechaNac.ToString("dd-MM-yyyy"));
-System.Console.WriteLine(empleado.edad());
-System.Console.WriteLine(empleado.antiguedad());
-empleado.jubilacion();
+int proximoAJubilacion = 0;
 
-System.Console.WriteLine(empleado.salario());
+double montoTotal = 0;
+
+string[] Nombres = ["Jose", "Andres", "Maximo"];
+string[] Apellidos = ["Rodriguez", "Castillos", "Salome"];
+char[] estado = {'c','s'};
+
+for (int i=0; i < empleado.Length; i++)
+{
+    empleado[i] = new Empleado();
+    empleado[i].Nombre = Nombres[aleatorio.Next(0,3)];
+    empleado[i].Apellido = Apellidos[aleatorio.Next(0,3)];
+    empleado[i].FechaNac = new DateTime(aleatorio.Next(1950, 2023),aleatorio.Next(1,13),aleatorio.Next(1,32));
+    empleado[i].EstadoCivil = estado[aleatorio.Next(0,2)];
+    empleado[i].FechaIngreso = new DateTime(aleatorio.Next(1950, 2023),aleatorio.Next(1,13),aleatorio.Next(1,32));
+    empleado[i].SueldoBasico = (double)aleatorio.Next(1,1000000);
+    empleado[i].Cargo = Cargos.Ingeniero;
+    if(i>0 && empleado[i].jubilacion()<empleado[proximoAJubilacion].jubilacion())
+    {
+        proximoAJubilacion = i;
+    }
+    montoTotal += empleado[i].SueldoBasico + empleado[i].salario();
+}
+
+System.Console.WriteLine("El empleado mas proximo a jubilarse es:");
+System.Console.WriteLine($"Nombre: {empleado[proximoAJubilacion].Nombre}");
+System.Console.WriteLine($"Apellido: {empleado[proximoAJubilacion].Apellido}");
+System.Console.WriteLine($"Fecha de nacimiento: {empleado[proximoAJubilacion].FechaNac.ToString("dd-MM-yyyy")}");
+System.Console.WriteLine($"Edad: {empleado[proximoAJubilacion].edad()}");
+System.Console.WriteLine($"Fecha de ingreso: {empleado[proximoAJubilacion].FechaIngreso.ToString("dd-MM-yyyy")}");
+System.Console.WriteLine($"Antiguedad: {empleado[proximoAJubilacion].antiguedad()}");
+if(empleado[proximoAJubilacion].EstadoCivil == 'c')
+{
+    System.Console.WriteLine("Estado Civil: Casado");
+}else
+{
+    System.Console.WriteLine("Estado Civil: Soltero");
+}
+if(empleado[proximoAJubilacion].jubilacion() == 0)
+{
+    System.Console.WriteLine("Puede jubilarse");
+}else
+{
+    System.Console.WriteLine($"Le faltan {empleado[proximoAJubilacion].jubilacion()} anios para jubilarse");
+}
+System.Console.WriteLine($"Sueldo Basico: ${empleado[proximoAJubilacion].SueldoBasico}");
+System.Console.WriteLine($"Salario: ${empleado[proximoAJubilacion].salario()}");
+
+System.Console.WriteLine($"\nMonto total en concepto de salarios de todos los empleados: ${montoTotal}");

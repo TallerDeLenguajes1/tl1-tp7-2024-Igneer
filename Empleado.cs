@@ -1,4 +1,12 @@
 namespace espacioEmpleado;
+enum Cargos
+{
+    Auxiliar,
+    Administrativo,
+    Ingeniero,
+    Especialista,
+    Investigador
+}
 
 class Empleado
 {
@@ -11,43 +19,61 @@ class Empleado
     private DateTime fechaNac;
     public DateTime FechaNac { get => fechaNac; set => fechaNac = value; }
 
-    private char civil;
-    public char Civil { get => civil; set => civil = value; }
+    private char estadoCivil;
+    public char EstadoCivil { get => estadoCivil; set => estadoCivil = value; }
 
     private DateTime fechaIngreso;
     public DateTime FechaIngreso { get => fechaIngreso; set => fechaIngreso = value; }
     private double sueldoBasico;
     public double SueldoBasico { get => sueldoBasico; set => sueldoBasico = value; }
 
-    private enum Cargos
-    {
-        Auxiliar,
-        Administrativo,
-        Ingeniero,
-        Especialista,
-        Investigador
-    }
+    private Cargos cargo;
+    public Cargos Cargo { get => cargo; set => cargo = value; }
     public int antiguedad(){
         int dias;
         DateTime fechaActual = DateTime.Now;
-        dias = fechaActual.Subtract(this.fechaIngreso).Days;
+        dias = fechaActual.Subtract(fechaIngreso).Days;
         return dias/365;
     }
-    public int anios(){
+    public int edad(){
         int dias;
         DateTime fechaActual = DateTime.Now;
-        dias = fechaActual.Subtract(this.fechaNac).Days;
+        dias = fechaActual.Subtract(fechaNac).Days;
         return dias/365;
     }
 
     public void jubilacion()
     {
-        if(anios() < 65)
+        if(edad() < 65)
         {
-            System.Console.WriteLine($"Le faltan {65-anios()} anios para jubilarse\n");
+            System.Console.WriteLine($"Le faltan {65-edad()} anios para jubilarse");
         }else
         {
-            System.Console.WriteLine($"Ya puede jubilarse\n");
+            System.Console.WriteLine($"Ya puede jubilarse");
         }
+    }
+
+    public double salario()
+    {
+        double adicional;
+        if(antiguedad()<20)
+        {
+            adicional = sueldoBasico*((double)antiguedad()/100); 
+        }else
+        {
+            adicional = sueldoBasico*0.25;
+        }
+
+        if(cargo == Cargos.Ingeniero || cargo == Cargos.Especialista)
+        {
+            adicional *= 1.50; 
+        }
+
+        if(estadoCivil == 'c')
+        {
+            adicional += 150000;
+        }
+
+        return(sueldoBasico + adicional);
     }
 }

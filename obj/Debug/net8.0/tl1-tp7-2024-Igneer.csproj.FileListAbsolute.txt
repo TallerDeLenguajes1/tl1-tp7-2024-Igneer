@@ -12,3 +12,4 @@ C:\Users\tato_\OneDrive\Documentos\3erAnio\TallerL1\tl1-tp7-2024-Igneer\obj\Debu
 C:\Users\tato_\OneDrive\Documentos\3erAnio\TallerL1\tl1-tp7-2024-Igneer\obj\Debug\net8.0\tl1-tp7-2024-Igneer.pdb
 C:\Users\tato_\OneDrive\Documentos\3erAnio\TallerL1\tl1-tp7-2024-Igneer\obj\Debug\net8.0\tl1-tp7-2024-Igneer.genruntimeconfig.cache
 C:\Users\tato_\OneDrive\Documentos\3erAnio\TallerL1\tl1-tp7-2024-Igneer\obj\Debug\net8.0\ref\tl1-tp7-2024-Igneer.dll
+C:\Users\tato_\OneDrive\Documentos\3erAnio\TallerL1\tl1-tp7-2024-Igneer\obj\Debug\net8.0\tl1-tp7-2024-Igneer.sourcelink.json

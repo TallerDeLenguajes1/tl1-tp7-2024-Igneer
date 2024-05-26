@@ -1,4 +1,4 @@
-namespace Empleado;
+namespace espacioEmpleado;
 
 class Empleado
 {
@@ -11,9 +11,14 @@ class Empleado
     private DateTime fechaNac;
     public DateTime FechaNac { get => fechaNac; set => fechaNac = value; }
 
+    private char civil;
+    public char Civil { get => civil; set => civil = value; }
+
+    private DateTime fechaIngreso;
+    public DateTime FechaIngreso { get => fechaIngreso; set => fechaIngreso = value; }
     private double sueldoBasico;
     public double SueldoBasico { get => sueldoBasico; set => sueldoBasico = value; }
-    
+
     private enum Cargos
     {
         Auxiliar,
@@ -22,22 +27,27 @@ class Empleado
         Especialista,
         Investigador
     }
-    public int antiguedad(DateTime Ingreso){
+    public int antiguedad(){
         int dias;
         DateTime fechaActual = DateTime.Now;
-        dias = fechaActual.Subtract(Ingreso).Days;
+        dias = fechaActual.Subtract(this.fechaIngreso).Days;
         return dias/365;
     }
-    public int anios(DateTime Nacimiento){
+    public int anios(){
         int dias;
         DateTime fechaActual = DateTime.Now;
-        dias = fechaActual.Subtract(Nacimiento).Days;
+        dias = fechaActual.Subtract(this.fechaNac).Days;
         return dias/365;
     }
 
-    public void jubilacion(int edad)
+    public void jubilacion()
     {
-        
+        if(anios() < 65)
+        {
+            System.Console.WriteLine($"Le faltan {65-anios()} anios para jubilarse\n");
+        }else
+        {
+            System.Console.WriteLine($"Ya puede jubilarse\n");
+        }
     }
-
 }

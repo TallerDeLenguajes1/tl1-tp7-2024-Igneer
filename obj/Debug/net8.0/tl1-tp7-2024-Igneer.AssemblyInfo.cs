@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("tl1-tp7-2024-Igneer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+12ae8d886ea161bdb7d95781d358183ebf08bdba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd9430c8df60e1d84a62260cc9b9a93f9065667c")]
 [assembly: System.Reflection.AssemblyProductAttribute("tl1-tp7-2024-Igneer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("tl1-tp7-2024-Igneer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
